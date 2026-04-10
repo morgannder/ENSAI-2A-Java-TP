@@ -18,7 +18,17 @@ Cas 2 : Destination non prévue -> utilisation de l'ascenseurle moins rempli.
 
 
 # 2.3/
+Update de la fonction generateTargetFloor pour qu'elle renvoie un étage
+différent de celui d'entrée du passager
+
 # 2.4/
+Mise en place des tests unitaires de la fonction isFull et 
+pour la méthode Elevator.addDestination() dans le fichier ElevatorTest.java
+
 # 2.5/
+Mise en place du CrazyElevator ! (il apparait comme le dernier ascenseur dans le display),
+Des messages informatifs sont proposés sur le display à l'aide de log.warn()
+
 # 2.6/
+Non réalisé.
 

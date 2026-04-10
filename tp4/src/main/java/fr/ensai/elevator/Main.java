@@ -31,6 +31,7 @@ public class Main {
         for (int elevator = 1; elevator <= nbElevators; elevator++){
             elevators.add(new Elevator(elevator, 0, elevatorCapacity));
         }
+        elevators.add(new CrazyElevator(nbElevators+1, 0, elevatorCapacity));
 
 
 

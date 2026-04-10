@@ -80,16 +80,18 @@ public class Floor {
     public void requestElevator(List<Elevator> elevators) {
 
         int i = 0;
-        while (i <  elevators.size()-1){
+        while (i <  elevators.size()){
             if (elevators.get(i).containDestination(this.number)){
                 return;
             }
             i++;
         }
-        int temp = elevators.get(0).getNbPassengers();
+        int passengerMin = elevators.get(0).getNbPassengers();
         int result = 0;
         for (int incr = 1 ; incr < elevators.size() ; incr++){
-            if (elevators.get(incr).getNbPassengers() < temp){
+            int passengerCurrent = elevators.get(incr).getNbPassengers();
+            if (elevators.get(incr).getNbPassengers() < passengerMin){
+                passengerMin = passengerCurrent;
                 result = incr;
             }
         }

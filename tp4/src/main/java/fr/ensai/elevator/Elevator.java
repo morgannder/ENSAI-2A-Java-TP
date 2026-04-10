@@ -21,9 +21,9 @@ public class Elevator {
 
     private int id;
     private int capacity;
-    private int currentFloor;
-    private List<Integer> destinationQueue;
-    private List<Person> passengers;
+    protected int currentFloor;
+    protected List<Integer> destinationQueue;
+    protected List<Person> passengers;
     private List<Person> lastUnloaded;
 
     /**
@@ -129,7 +129,7 @@ public class Elevator {
      */
     public void loadPassengers(Floor floor) {
 
-        while (isFull()) {
+        while (!(isFull())) {
             Person person = floor.boardNextPerson();
             if (person == null)
                 break;
@@ -185,7 +185,7 @@ public class Elevator {
      */
     public boolean isFull(){
 
-        return this.passengers.size() < this.capacity;
+        return this.passengers.size() >= this.capacity;
     }
 
     /**

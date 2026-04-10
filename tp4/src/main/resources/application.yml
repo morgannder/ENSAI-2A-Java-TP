@@ -1,6 +1,6 @@
 steps:
-  count: 30
-  delay: 100
+  count: 15
+  delay: 1500
 floors:
   count: 4
 elevators:
