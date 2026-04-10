@@ -188,7 +188,7 @@ public class Elevator {
         return this.passengers.size() < this.capacity;
     }
 
-        /**
+    /**
      * Returns an int representing the number of passengers in the current elevator
      */
     public int getNbPassengers(){
@@ -196,4 +196,15 @@ public class Elevator {
         return this.passengers.size();
     }
 
+    /**
+     * Creates n passengers with a startingFloor of 0.
+     * @param passangerstoadd : number of passenger to create.
+     */
+    public void addPassengersToElevator(int passengerstoadd){
+
+        for (int i = 0 ; i < passengerstoadd; i++){
+            Person newpassenger = new Person(0);
+            this.passengers.add(newpassenger);
+        }
+    }
 }
