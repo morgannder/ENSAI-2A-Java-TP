@@ -1,16 +1,19 @@
 package fr.ensai.mediaplayer;
 
+import java.util.Objects;
+
 /**
  * Represents a song with essential attributes.
  */
 public class Song {
-    private String singer;
+    private Artist singer;
     private String title;
     private int year;
     private int duration;
     private String lyrics;
-    private String author;
-    private String composer;
+    private Artist author;
+    private Artist composer;
+    private MusicalGenre genre;
 
     /**
      * Constructs a new Song object.
@@ -24,14 +27,28 @@ public class Song {
      * @param author   The author of the song.
      * @param composer The composer of the song.
      */
-    public Song(String title, String singer, int year, int duration, String lyrics, String author, String composer) {
-        this.title = title;
+    public Song(Artist singer, String title, int year, int duration, String lyrics, Artist author, Artist composer, MusicalGenre genre) {
         this.singer = singer;
+        this.title = title;
         this.year = year;
         this.duration = duration;
         this.lyrics = lyrics;
         this.author = author;
         this.composer = composer;
+        this.genre = genre;
+    }
+
+    public void play() {
+        for (String word : lyrics.split(" ")) {
+            System.out.print(word + " ");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Thread was interrupted");
+                return;
+            }
+        }
     }
 
     /**
@@ -39,9 +56,9 @@ public class Song {
      */
     @Override
     public String toString() {
-        return String.format("Song %s by %s",this.title, this.singer);
+        return String.format("Song %s by %s", this.title, this.singer);
     }
-    
+
     /**
      * Indicates whether some other object is "equal to" this one. Two Song
      * objects are considered equal if they have the same title, singer, and year.
