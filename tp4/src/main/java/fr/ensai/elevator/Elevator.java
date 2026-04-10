@@ -180,10 +180,20 @@ public class Elevator {
                 (unloaded.isBlank() ? "" : " " + unloaded);
     }
 
-
+    /**
+     * Returns a boolean explaining if the elevator is full or not
+     */
     public boolean isFull(){
 
         return this.passengers.size() < this.capacity;
+    }
+
+        /**
+     * Returns an int representing the number of passengers in the current elevator
+     */
+    public int getNbPassengers(){
+
+        return this.passengers.size();
     }
 
 }
