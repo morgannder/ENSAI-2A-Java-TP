@@ -1,13 +1,16 @@
 steps:
   count: 30
-  delay: 1000
-
+  delay: 100
+floors:
+  count: 4
+elevators:
+ count: 2
 hotel:
   elevator:
     capacity: 3
   spawn-probability:
-    ground: 0.6
-    other: 0.3
+    ground: 0.65
+    other: 0.65
   display:
     column-width:
       floor: 5

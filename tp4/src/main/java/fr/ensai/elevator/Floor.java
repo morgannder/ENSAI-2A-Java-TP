@@ -76,6 +76,12 @@ public class Floor {
      * @param elevators the list of elevators available in the hotel
      */
     public void requestElevator(List<Elevator> elevators) {
+
+        for (i)
+
+        if (elevator.destinationQueue.contains(this.number)){
+
+        }
         elevators.get(0).addDestination(this.number);
     }
 
